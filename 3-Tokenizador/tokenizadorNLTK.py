@@ -1,4 +1,4 @@
-# Contar Palabras
+# Contar Palavras
 from collections import Counter
 texto = "Este texto está sendo utilizado para demonstrar o funcionamento de diferentes formas tokenização. O processo de tokenização pode ser realizado com objetivos distintos."
 palavras = texto.replace('\n',' ').replace('\t','').replace(',', '').replace('.', ' ').split(' ')
@@ -17,6 +17,13 @@ print(palavras_tokenize)
 contador = Counter(palavras_tokenize)
 for cont in contador.items():
     print(cont)
+
+#Stemmer
+nltk.download('rslp')
+stemmer = nltk.stem.RSLPStemmer()
+print(stemmer.stem("abóbora"))
+print(stemmer.stem("maça"))
+print(stemmer.stem("Curitiba"))
 
 # Exercícios
 # • Avaliar o algoritmo de Tokenização para os seguintes textos:
